@@ -1,0 +1,13 @@
+temperature,humidity,wind,recommendation
+0,90,5,multiple layers
+10,70,12,multiple layers
+36,54,24,Cottons
+22,58,13,Cottons
+27,53,14,Cottons
+30,45,15,Cottons
+40,50,15,Breathable fabrics
+28,80,22,Cottons
+15,80,10,denims
+20,80,15,denims
+32,80,14,Breathable fabrics
+44,60,15,Breathable fabrics
