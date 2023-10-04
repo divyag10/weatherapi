@@ -20,8 +20,8 @@ app.include_router(weatherapis.router)
 app.include_router(crud_excel.router)
 app.include_router(core.router)
 
-os.environ['WEATHER_API_KEY'] = '5f5cfef0e951d155025a26e184c7dcd2'
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['WEATHER_API_KEY'] = 'xxxxxxxxxxxxxx'
+os.environ['OPENAI_API_KEY'] = 'xxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 @app.get("/")
 def home():
