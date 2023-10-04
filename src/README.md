@@ -1,5 +1,9 @@
 The entry point for the project is the main.py where app() has been initialized.
 
+To run the app:
+uvicorn main:app --reload
+Application would start running on http://localhost:8000
+
  
 Weather Recommendation:
 The route for getting weather, outfit and activity summary is /weather/{city}, get_weather_city() is called for this route which is defined in weatherapis.py.
@@ -46,5 +50,5 @@ provide API endpoint /weather/{city} - To view weather summar, outfit and activi
 API endpoints:
 /weather/{city} - To view weather summar, outfit and activity recommendation
 /upload - To upload excel for outfit recommendation, this is used by DecisionTreeClassifier. Name of excel should be outfit_table.xlsx
-/add_activity - To add activities for activity recommendation
-/get_all_activity - To view all entries for activity recommendation
+/add_activity - To add activities for activity recommendation, can be accessed through http://localhost:8000/docs
+/get_all_activity - To view all entries for activity recommendation, can be accessed through http://localhost:8000/docs
