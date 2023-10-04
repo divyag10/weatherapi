@@ -1,7 +1,10 @@
 The entry point for the project is the main.py where app() has been initialized.
 
-To run the app:
-uvicorn main:app --reload
+TO RUN the app:
+Install virtual environment
+Run the requirements.txt
+start uvicorn with, uvicorn main:app --reload
+provide API endpoint /weather/{city} - To view weather summar, outfit and activity recommendation
 Application would start running on http://localhost:8000
 
  
@@ -40,12 +43,6 @@ To run unittest:
 Unit test are defined in src> test_app.py
 Go to project folder and then to src, then run
 python -m unittest test_app.py
-
-
-TO RUN the app,
-Install virtual environment
-Run the requirements.txt
-provide API endpoint /weather/{city} - To view weather summar, outfit and activity recommendation
 
 API endpoints:
 /weather/{city} - To view weather summar, outfit and activity recommendation
