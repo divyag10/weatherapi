@@ -1,21 +1,21 @@
 # Weather Based Recommendation
 
-Project provides activity and outfir recommendations based on the weather in the city. City is provided and an input to the route.
+Project provides activity and outfit recommendations based on the weather in the city. City is provided as an input to the route.
 
 
 
 ## Application Setup
 - In any directory give: pip install virtualenv
-- Create virtual environment by giving command: virtualenv <env_name> [env_name is the name you want to give to virtual environment]
-- To activate virtual environment give command: <env_name>\Scripts\activate
-- Inside virtual environment: Go to project folder (where requirements.txt is present) and give command: pip install -r requirements.txt
+- Create virtual environment by giving command: virtualenv <env_name> [env_name is the name of the virtual environment]
+- To activate virtual environment run command: <env_name>\Scripts\activate
+- Inside virtual environment: Go to project folder (where requirements.txt is present) and run command: pip install -r requirements.txt
 - Update the OpenAI api key in the file at location: 
 fastapi_server\src\main.py
-Here, you are going to update the parameter os.environ['OPENAI_API_KEY'] value. To get Openai API key go to, https://auth0.openai.com, login with valid credentials and then under your profile logo you should see option to ‘View API keys’. Here, you need to create new secret key and use this value for os.environ['OPENAI_API_KEY']
+Here, update the parameter os.environ['OPENAI_API_KEY'] value. To fetch Openai API key go to, https://auth0.openai.com, login with valid credentials and then under the profile logo you should see option to ‘View API keys’. Here, you need to create new secret key and use this value for os.environ['OPENAI_API_KEY']
 - After all the requirements are installed, give following command to run the server: Uvicorn main:app –reload
-- The application would be running at:
+- The application will start running at:
 http://localhost:8000
-- To see weather recommendation, go to :
+- To see weather based recommendations, go to :
 http://localhost:8000/weather/{city}
 
 
@@ -27,7 +27,7 @@ The route for getting weather, outfit and activity summary is /weather/{city}, g
 This makes call to OpenWeatherAPI and passes city as parameter. 
 
 ## _OpenAI API_
-OpenAI API are called for generating funny summary.
+OpenAI API is called for generating funny summary.
 Model used is text-davinci-003 from GPT-3.
 
 ## _Outfit Recommendation_
@@ -38,7 +38,7 @@ Features are defined from the excel on basis of which the output i.e. recommende
 ## _Activity Recommendation_
 For activity recommendation, get_activity_recommendation() is called from weatherapi.py whih is defined in src > sql_app> core.py
 This fetches recommendation from database. Sqlite is used as the database. 
-Based on weather condition the temprature, humidity and wind are classified and saved in database.
+Based on weather condition temprature, humidity and wind are classified and saved in database as high, moderate, low etc.
 When recommendation call comes, then based on the params the value is fetched from database.
 
 There are API endpoint for adding database entries for activity recommendation i.e. /add_activity
@@ -46,10 +46,10 @@ and to view all the entries for activity recommendations use /get_all_activity, 
 These API endpoints can be used via SwaggerUI.
 
 In src> sql_app folder:
-core.py: defines all API endpoint for adding activity recommendation and viewing them
-db.py: create session and db object
-models.py: Has the database model for the Activity data table.
-schemas.py: Contains Pydantic schema for APIs
+- core.py: defines all API endpoint for adding activity recommendation and viewing them
+- db.py: create session and db object
+- models.py: Has the database model for the Activity data table.
+- schemas.py: Contains Pydantic schema for APIs
 
 src> cache.py: File that defines functions for caching openweather api response, which expires after every 2 hours
 
