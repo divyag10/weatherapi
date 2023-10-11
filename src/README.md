@@ -1,11 +1,20 @@
 The entry point for the project is the main.py where app() has been initialized.
 
-TO RUN the app:
-Install virtual environment
-Run the requirements.txt
-start uvicorn with, uvicorn main:app --reload
-provide API endpoint /weather/{city} - To view weather summar, outfit and activity recommendation
-Application would start running on http://localhost:8000
+TO RUN the application:
+1) In any directory give: pip install virtualenv
+2) Create virtual environment by giving command: virtualenv <env_name> [env_name is the name you want to give to virtual environment]
+3) To activate virtual environment give command: <env_name>\Scripts\activate
+4) Inside virtual environment: Go to project folder (where requirements.txt is present) and give command: pip install -r requirements.txt
+5) Update the OpenAI api key in the file at location: 
+fastapi_server\src\main.py
+Here, you are going to update the parameter os.environ['OPENAI_API_KEY'] value. To get Openai API key go to, https://auth0.openai.com, login with valid credentials and then under your profile logo you should see option to ‘View API keys’. Here, you need to create new secret key and use this value for os.environ['OPENAI_API_KEY']
+6) After all the requirements are installed, give following command to run the server: 
+Uvicorn main:app –reload
+7) The application would be running at:
+http://localhost:8000
+8) To see weather recommendation, go to :
+http://localhost:8000/weather/{city}
+
 
  
 Weather Recommendation:
